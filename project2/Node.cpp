@@ -28,6 +28,17 @@ bool Node<T>::operator==( const Node<T> &X )
         return false;
 }
 template <typename T>
+Node<T> * Node<T>::new_next( Node<T> *next_next )
+{
+    next = next_next;
+    return next;
+}
+template <typename T>
+Node <T> * Node<T>::get_next ()
+{
+    return next;
+}
+template <typename T>
 ostream& operator<<( ostream &stream, const Node<T> &X )
 {
     stream << X.information ;

@@ -7,11 +7,14 @@
 #include "NODE.h"
 #include "FIFO.h"
 #include "LETTERNUMBER.h"
+#include "Fifo.cpp"
+#include "Node.cpp"
 
 
 using namespace std;
 
 int main()
 {
-    Fifo<int> A;
+
+    return 0;
 }

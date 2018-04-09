@@ -15,10 +15,12 @@ class Node
     Node<T> *next;
 public:
     Node( T info );
-    Node<T> * operator++();
-    bool operator==( const Node<T> &X );
+    Node <T> * operator++(); // incrementing pointers
+    bool operator==( const Node<T> &X ); // comparing Nodes
+    Node <T> * new_next ( Node<T> *next_next ); // next is private so cant change it by =
+    Node <T> * get_next (); // cant get next in some functions
     template < typename U >
-    friend ostream& operator<<( ostream &, const Node<U> & );
+    friend ostream& operator<<( ostream &, const Node<U> & ); // show Node
 };
 
 
