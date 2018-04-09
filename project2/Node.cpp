@@ -1,3 +1,6 @@
+// Kaczmarek Kacper Node.cpp
+// Definitions of functions Node template
+
 #include <iostream>
 
 #include "NODE.h"
@@ -15,6 +18,14 @@ template <typename T>
 Node<T> * Node<T>::operator++()
 {
     return this->next;
+}
+template <typename T>
+bool Node<T>::operator==( const Node<T> &X )
+{
+    if ( information == X.information )
+        return true;
+    else
+        return false;
 }
 template <typename T>
 ostream& operator<<( ostream &stream, const Node<T> &X )

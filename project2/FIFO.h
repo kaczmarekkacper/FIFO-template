@@ -1,3 +1,7 @@
+// Kaczmarek Kacper FIFO.h
+// Class Fifo templete
+// Class Node templete required
+
 #ifndef FIFO_H_INCLUDED
 #define FIFO_H_INCLUDED
 
@@ -10,21 +14,18 @@ using namespace std;
 template < typename T >
 class Fifo
 {
-    Node<T> *head;
-    Node<T> *tail;
-    Node<T> *temporary;
-    Node<T> *pointer;
+    Node<T> *head; // first element in FIFO
+    Node<T> *tail; // last element in FIFO
+    Node<T> *temporary; // helpful to create an objects or to cout
     int amount;
 public:
     Fifo(); // preparing FIFO
     bool add( T info ); // add element to FIFO
     bool pop(); // show first element and delete it
-    int get_amount();
-    Node<T> * get_head();
-    bool operator==( const Fifo<T> &X);
-    bool operator!=( const Fifo<T> &X);
+    bool operator==( const Fifo<T> &X); // comparing fifos
+    bool operator!=( const Fifo<T> &X); // the same as upper
     template < typename U >
-    friend ostream& operator<<( ostream &, const Fifo<U> & );
+    friend ostream& operator<<( ostream &, const Fifo<U> & ); // show fifo
 };
 
 #endif // FIFO_H_INCLUDED

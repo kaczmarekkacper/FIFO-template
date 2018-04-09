@@ -1,3 +1,6 @@
+// Kaczmarek Kacper NODE.h
+// Class Node template
+
 #ifndef NODE_H_INCLUDED
 #define NODE_H_INCLUDED
 
@@ -13,6 +16,7 @@ class Node
 public:
     Node( T info );
     Node<T> * operator++();
+    bool operator==( const Node<T> &X );
     template < typename U >
     friend ostream& operator<<( ostream &, const Node<U> & );
 };
