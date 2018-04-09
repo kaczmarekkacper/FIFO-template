@@ -7,7 +7,7 @@
 
 using namespace std;
 
-LetterNumber::LetterNumber( char l = 'A', char n = '1' )
+LetterNumber::LetterNumber( char l, int n )
 {
     letter = l;
     number = n;
@@ -28,7 +28,7 @@ bool LetterNumber::operator== ( const LetterNumber &X )
 }
 ostream& operator<<( ostream &stream, const LetterNumber &X )
 {
-    stream << X.letter << ' ' << X.number << ' ' ;
+    stream << X.letter << ' ' << X.number ;
     return stream;
 }
 bool LetterNumber::operator!= ( const LetterNumber &X ) { return !(*this==X); }

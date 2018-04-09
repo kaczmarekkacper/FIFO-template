@@ -20,6 +20,7 @@ class Fifo
     int amount;
 public:
     Fifo(); // preparing FIFO
+    ~Fifo(); // deleting FIFO
     bool add( T info ); // add element to FIFO
     bool pop(); // show first element and delete it
     bool operator==( const Fifo<T> &X); // comparing fifos

@@ -15,6 +15,9 @@ using namespace std;
 
 int main()
 {
-
+    Fifo<LetterNumber> A;
+    LetterNumber B;
+    A.add( LetterNumber( B ) );
+    cout << A;
     return 0;
 }

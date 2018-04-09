@@ -17,6 +17,22 @@ Fifo<T>::Fifo()
     temporary = nullptr;
 }
 template < typename T >
+Fifo<T>::~Fifo()
+{
+    if ( head )
+    {
+        do
+        {
+            temporary = (*head).get_next();
+            delete head;
+            head = temporary;
+            amount--;
+        }
+        while ( head );
+    }
+
+}
+template < typename T >
 bool Fifo<T>::add( T info )
 {
     if (( temporary = new Node<T> ( info ) ))
