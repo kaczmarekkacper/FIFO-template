@@ -23,5 +23,10 @@ public:
     friend ostream& operator<<( ostream &, const Node<U> & ); // show Node
 };
 
-
+template <typename T>
+ostream& operator<<( ostream &stream, const Node<T> &X )
+{
+    stream << X.information ;
+    return stream;
+}
 #endif // NODE_H_INCLUDED

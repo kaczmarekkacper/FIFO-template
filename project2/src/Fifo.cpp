@@ -3,18 +3,19 @@
 
 #include <iostream>
 
-#include "FIFO.h"
-#include "NODE.h"
+#include "Fifo.h"
+#include "node.h"
+#include "LetterNumber.h"
 
 using namespace std;
 
 template < typename T >
 Fifo<T>::Fifo()
 {
-    head = nullptr;
-    tail = nullptr;
+    head = NULL;
+    tail = NULL;
     amount = 0;
-    temporary = nullptr;
+    temporary = NULL;
 }
 template < typename T >
 Fifo<T>::~Fifo()
@@ -47,7 +48,7 @@ bool Fifo<T>::add( T info )
             head = temporary;
             tail = temporary;
         }
-        temporary = nullptr;
+        temporary = NULL;
         amount++;
         return true;
     }
@@ -65,7 +66,7 @@ bool Fifo<T>::pop()
         delete head;
         head = temporary;
         amount--;
-        temporary = nullptr;
+        temporary = NULL;
         return true;
     }
     else // if FIFO is empty
@@ -91,12 +92,12 @@ bool Fifo<T>::operator==( const Fifo<T> &X )
         }
         if ( (*temporary).get_next() ) // if while ends before reach end
         {
-            temporary = nullptr;
+            temporary = NULL;
             return true;
         }
     }
     // if amount isn't equal or all element are the same
-    temporary = nullptr;
+    temporary = NULL;
     return false;
 }
 template < typename T >
@@ -104,15 +105,8 @@ bool Fifo<T>::operator!=( const Fifo<T> &X )
 {
     return !( *this == X );
 }
-template <typename T>
-ostream& operator<<( ostream &stream, const Fifo<T> &X )
-{
-    Node<T> *temporary = X.head;
-    while ( temporary )
-    {
-        stream << (*temporary) << " ";
-        temporary = (*temporary).get_next();
-    }
-    return stream;
-}
+
+
+template class Fifo<LetterNumber>;
+
 

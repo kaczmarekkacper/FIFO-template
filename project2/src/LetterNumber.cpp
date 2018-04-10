@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-#include "LETTERNUMBER.h"
+#include "LetterNumber.h"
+
 
 using namespace std;
 
@@ -26,9 +27,11 @@ bool LetterNumber::operator== ( const LetterNumber &X )
     }
     return false;
 }
+
 ostream& operator<<( ostream &stream, const LetterNumber &X )
 {
     stream << X.letter << ' ' << X.number ;
     return stream;
 }
+
 bool LetterNumber::operator!= ( const LetterNumber &X ) { return !(*this==X); }

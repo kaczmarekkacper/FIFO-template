@@ -4,12 +4,10 @@
 
 #include <iostream>
 
-#include "NODE.h"
-#include "FIFO.h"
-#include "LETTERNUMBER.h"
-#include "Fifo.cpp"
-#include "Node.cpp"
 
+#include "Fifo.h"
+#include "node.h"
+#include "LetterNumber.h"
 
 using namespace std;
 

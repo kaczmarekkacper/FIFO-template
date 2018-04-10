@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#include "NODE.h"
+#include "node.h"
 
 using namespace std;
 
@@ -28,5 +28,17 @@ public:
     template < typename U >
     friend ostream& operator<<( ostream &, const Fifo<U> & ); // show fifo
 };
+
+template <typename T>
+ostream& operator<<( ostream &stream, const Fifo<T> &X )
+{
+    Node<T> *temporary = X.head;
+    while ( temporary )
+    {
+        stream << (*temporary) << " ";
+        temporary = (*temporary).get_next();
+    }
+    return stream;
+}
 
 #endif // FIFO_H_INCLUDED
