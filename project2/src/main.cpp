@@ -8,9 +8,6 @@
 #include "Fifo.h"
 #include "node.h"
 #include "LetterNumber.h"
-//#include "Fifo.cpp"
-//#include "Node.cpp"
-
 
 using namespace std;
 

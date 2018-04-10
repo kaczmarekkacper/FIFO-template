@@ -12,7 +12,7 @@ template <typename T>
 Node<T>::Node( T info )
 {
     information = info; // storage
-    next = nullptr;
+    next = NULL;
 }
 
 template <typename T>
