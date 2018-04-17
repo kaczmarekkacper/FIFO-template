@@ -80,43 +80,72 @@ public:
     bool operator==( const Fifo<T> &X) // comparing fifos
     {
         if ( amount == X.amount ) // FIFOs can be the same only if they amounts are equal
-        {
-            Node<T> *temporary2; // creating new helping pointer
-            temporary = head;
-            temporary2 = X.head;
-            while ( !((*temporary).get_next() ) )
             {
-                if ( temporary == temporary2 )
+                if ( amount )
                 {
-                    temporary++;
-                    temporary2++;
+                    Node<T> *temporary2; // creating new helping pointer
+                    temporary = head;
+                    temporary2 = X.head;
+                    if ( amount == 1 )
+                    {
+                        if ( (*temporary) == (*temporary2) )
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    do
+                    {
+                        if ( (*temporary) == (*temporary2) )
+                        {
+                            temporary = (*temporary).get_next();
+                            temporary2 = (*temporary2).get_next();
+                        }
+                        else
+                            break;
+                    }
+                    while ( !(*temporary).get_next() );
+                    if ( !(*temporary).get_next() ) // if while ends before reach end
+                    {
+                        temporary = nullptr;
+                    return true;
+                    }
                 }
                 else
-                    break;
+                    return true;
             }
-            if ( (*temporary).get_next() ) // if while ends before reach end
-            {
-                temporary = nullptr;
-                return true;
-            }
-        }
-        // if amount isn't equal or all element are the same
-        temporary = nullptr;
-        return false;
+            // if amount isn't equal or all element are the same
+            temporary = nullptr;
+            return false;
     }
     bool operator!=( const Fifo<T> &X) // the same as upper
     {
         return !( *this == X );
     }
-    template < typename U >
-    friend ostream& operator<<( ostream &stream, const Fifo<U> &X ) // show fifo
+    int howmany()
     {
-        Node<U> *temporary = X.head;
+        return amount;
+    }
+    bool isempty()
+    {
+        if ( amount )
+        {
+            return false;
+        }
+        return true;
+    }
+    friend ostream& operator<<( ostream &stream, const Fifo<T> &X ) // show fifo
+    {
+        Node<T> *temporary = X.head;
         while ( temporary )
         {
-            stream << (*temporary) << " ";
+            stream << (*temporary) << ", ";
             temporary = (*temporary).get_next();
         }
+        temporary = nullptr;
         return stream;
     }
 };

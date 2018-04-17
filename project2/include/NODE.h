@@ -39,8 +39,7 @@ public:
     {
         return next;
     }
-    template < typename U >
-    friend ostream& operator<<( ostream &stream, const Node<U> &X ) // show Node
+    friend ostream& operator<<( ostream &stream, const Node<T> &X ) // show Node
     {
         stream << X.information ;
         return stream;
