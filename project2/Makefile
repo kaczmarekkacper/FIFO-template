@@ -9,7 +9,7 @@ DEPDIR = libs
 
 TARGET = project2
 
-default: directory letternumber main
+default: directory letternumber testingg main
 
 directory:
 	mkdir -p $(BUILDDIR) $(DEPDIR)
@@ -19,6 +19,9 @@ letternumber:
 
 main:
 	$(CC) $(CFLAGS) $(HEADERS) $(DEPDIR)/* $(SRCDIR)/main.cpp -o $(BUILDDIR)/$(TARGET)
+
+testingg:
+	$(CC) -c $(HEADERS) $(SRCDIR)/Testingg.cpp -o $(DEPDIR)/Testingg.o
 
 clean:
 	rm -rf $(BUILDDIR)

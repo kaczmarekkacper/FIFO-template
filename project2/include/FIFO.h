@@ -61,21 +61,23 @@ public:
         else // if new doesn't work
             return false;
     }
-    bool pop() // show first element and delete it
+    T pop() // show first element and delete it
     {
         if ( head ) // if FIFO isn't empty
         {
             temporary = (*head).get_next();
             cout << "First element of FIFO: ";
             cout << (*head) << endl;
+            Node<T>* sth;
+            *sth=*head;
             delete head;
             head = temporary;
             amount--;
             temporary = nullptr;
-            return true;
+            return (*sth).get_info();
         }
         else // if FIFO is empty
-            return false;
+            return 0;
     }
     bool operator==( const Fifo<T> &X) // comparing fifos
     {

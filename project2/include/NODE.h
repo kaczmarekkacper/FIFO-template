@@ -44,6 +44,10 @@ public:
         stream << X.information ;
         return stream;
     }
+    T get_info()
+    {
+        return information;
+    }
 };
 
 
