@@ -68,13 +68,12 @@ public:
             temporary = (*head).get_next();
             cout << "First element of FIFO: ";
             cout << (*head) << endl;
-            Node<T>* sth;
-            *sth=*head;
+            Node<T> sth = *head ;
             delete head;
             head = temporary;
             amount--;
             temporary = nullptr;
-            return (*sth).get_info();
+            return sth.get_info();
         }
         else // if FIFO is empty
             return 0;

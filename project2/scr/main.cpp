@@ -16,7 +16,6 @@ int main()
 {
     Testing A;
     LetterNumber LN( 'C', 5 );
-    cout << LN << endl;
     A.add_pop_int( 10 );
     A.add_pop_LN ( LN );
     A.isempty_int (1);

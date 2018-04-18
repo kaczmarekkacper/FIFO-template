@@ -30,14 +30,13 @@ bool Testing::add_pop_int ( int info )
     }
     else
     {
-        cout << " Result isnt equal to argument." << endl;
+        cout << "Result isnt equal to argument." << endl;
         return false;
     }
 }
 
 bool Testing::add_pop_LN ( LetterNumber &info )
 {
-    cout << info << endl;
     Fifo<LetterNumber> Fifo;
     LetterNumber result;
     cout << "--------------------------------------------------------------------------------" << endl;
@@ -59,7 +58,7 @@ bool Testing::add_pop_LN ( LetterNumber &info )
     }
     else
     {
-        cout << " Result isnt equal to argument." << endl;
+        cout << "Result isnt equal to argument." << endl;
         return false;
     }
 }
