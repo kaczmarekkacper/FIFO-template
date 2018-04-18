@@ -171,7 +171,7 @@ void Testing::same_int ( bool agree )
         Fifo1.add( 5 );
         Fifo2.add( 10 );
         cout << Fifo1 << endl << Fifo2 << endl;
-        cout << "Fifos should be equal." << endl;
+        cout << "Fifos shouldn't be equal." << endl;
         cout << "Fifos are equal: " << (Fifo1==Fifo2) << endl;
     }
 }
@@ -200,7 +200,7 @@ void Testing::same_LN ( bool agree )
         Fifo1.add( LN );
         Fifo2.add( LN2 );
         cout << Fifo1 << endl << Fifo2 << endl;
-        cout << "Fifos should be equal." << endl;
+        cout << "Fifos shouldn't be equal." << endl;
         cout << "Fifos are equal: " << (Fifo1==Fifo2) << endl;
     }
 }
